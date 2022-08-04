@@ -2,8 +2,6 @@
 // iterate over catagories return buttons
 // make sure select button when they are availabe
 
-
-
 // items
 const menu = [
     {
@@ -81,40 +79,13 @@ const menu = [
   ];
 // get parent elements
   const sectionCenter = document.querySelector(".section-center")
-  const btnContainer = document.querySelectorAll(".btn-container")
-  const filterBtns = document.querySelectorAll(".filter-btn")
+  const btnContainer = document.querySelector(".btn-container")
 
   // load items
   window.addEventListener("DOMContentLoaded", function(){
     displayMenuItems(menu)
-    const catagories = menu.reduce(function(values, item){
-      if(!values.includes(item.category)){
-        values.push(item.category)
-      }
-      return values
-    }, ["all"])
-    console.log(catagories)
-
+    displayMenuButtons()
   })
-// filter items
-filterBtns.forEach(function(btn){
-  btn.addEventListener("click", function(e){
-    // console.log(e.currentTarget.dataset)
-    const catagory = e.currentTarget.dataset.id
-    const menuCategory = menu.filter(function(menuItem){
-      // console.log(menuItem.category)
-      if(menuItem.category == catagory){
-      return menuItem
-      }
-    })
-    // console.log(menuCategory)
-    if(catagory == 'all'){
-      displayMenuItems(menu)
-    }else{
-      displayMenuItems(menuCategory)
-    }
-  })
-})
 
   function displayMenuItems(menuItems){
     let displayMenu = menuItems.map(function(item){
@@ -133,4 +104,41 @@ filterBtns.forEach(function(btn){
   displayMenu = displayMenu.join("")
     // console.log(displayMenu)
   sectionCenter.innerHTML = displayMenu;
+  }
+
+  function displayMenuButtons(){
+    const catagories = menu.reduce(function(values, item){
+      if(!values.includes(item.category)){
+        values.push(item.category)
+      }
+      return values
+    }, ["all"])
+
+    const catagoryBtns = catagories.map(function(catagory){
+      return ` <button class="filter-btn" type="button" data-id=${catagory}>${catagory}</button>`
+    }).join("");
+    btnContainer.innerHTML = catagoryBtns;
+    // after the buttons are loaded, then can filter them but not before
+    // select once they have been added to the DOM
+    // const filterBtns = document.querySelectorAll(".filter-btn")
+  const filterBtns = btnContainer.querySelectorAll(".filter-btn")
+
+  // filter items
+filterBtns.forEach(function(btn){
+  btn.addEventListener("click", function(e){
+    // console.log(e.currentTarget.dataset)
+    const catagory = e.currentTarget.dataset.id
+    const menuCategory = menu.filter(function(menuItem){
+      if(menuItem.category == catagory){
+      return menuItem
+      }
+    })
+    // console.log(menuCategory)
+    if(catagory == 'all'){
+      displayMenuItems(menu)
+    }else{
+      displayMenuItems(menuCategory)
+    }
+  })
+})
   }
