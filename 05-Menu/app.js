@@ -1,3 +1,10 @@
+// get only unique catagories
+// iterate over catagories return buttons
+// make sure select button when they are availabe
+
+
+
+// items
 const menu = [
     {
       id: 1,
@@ -77,9 +84,17 @@ const menu = [
   const btnContainer = document.querySelectorAll(".btn-container")
   const filterBtns = document.querySelectorAll(".filter-btn")
 
-  // display all items when page loads
+  // load items
   window.addEventListener("DOMContentLoaded", function(){
     displayMenuItems(menu)
+    const catagories = menu.reduce(function(values, item){
+      if(!values.includes(item.category)){
+        values.push(item.category)
+      }
+      return values
+    }, ["all"])
+    console.log(catagories)
+
   })
 // filter items
 filterBtns.forEach(function(btn){
