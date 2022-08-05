@@ -5,18 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- preloader -->
     <div class="preloader">
-        <img src="preloader.gif" alt="preloader" class="preloader_item">
+        <img src="preloader.gif" alt="preloader" class="preloader__item">
     </div>
 
     <!-- header -->
     <header>
-        <video class="video_container">
+        <video controls muted autoplay loop class="video-container">
             <source src="./video.mp4" type="video/mp4"> 
         </video>
+        <h1>Video Project</h1>
+
+        <button class="switch-btn">
+            <span>
+                Play
+            </span>
+            <span>
+                Pause
+            </span>
+            <span class="switch">
+
+            </span>
+        </button>
     </header>
+
+    <script src="./app.js"></script>
 </body>
 </html>
