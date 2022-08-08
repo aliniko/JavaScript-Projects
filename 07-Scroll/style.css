@@ -233,7 +233,7 @@ nav {
   color: var(--clr-secondary);
 }
 .logo {
-  height: 50px;
+  height: 25px;
 }
 .links-container {
   height: 0;
@@ -276,7 +276,7 @@ nav {
     display: none;
   }
   .links-container {
-    height: auto !important;
+    height: 22px !important;
   }
   .links {
     display: flex;
@@ -300,8 +300,8 @@ nav {
 /* hero */
 header {
   min-height: 100vh;
-  background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.7)),
-    url(./hero-bcg.jpeg) center/cover no-repeat;
+  background: linear-gradient(rgb(21 84 144 / 78%), rgb(60 59 115 / 84%)),
+  url(./hero-bcg.jpeg) center/cover no-repeat;
 }
 .banner {
   min-height: 100vh;
