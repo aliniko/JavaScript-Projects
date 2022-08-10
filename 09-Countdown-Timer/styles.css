@@ -85,6 +85,7 @@ img:not(.logo) {
 }
 img {
   display: block;
+  height: 34rem;
 }
 
 h1,
@@ -196,13 +197,32 @@ Countdown Timer
     display: grid;
     grid-template-columns: 1fr 1fr;
     place-items: center;
-    gap: 3rem;
-    width: 95vw;
+    /* gap: 1rem; */
+    width: 98vw;
   }
   .gift-img {
     margin-bottom: 0;
   }
 }
+
+@media screen and (max-width: 991px) {
+img{
+  height: 26rem;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+html{
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.deadline-format{
+  margin-right: 0.5rem !important;
+  padding: .2rem;
+}
+}
+
 .gift-info p {
   margin: 2rem 0;
 }
