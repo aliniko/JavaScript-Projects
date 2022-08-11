@@ -24,7 +24,7 @@ const weekdays = [
 
 const giveaway = document.querySelector(".giveaway");
 const deadline = document.querySelector(".deadline");
-const items = document.querySelector(".deadline-format h4");
+const items = document.querySelectorAll(".deadline-format h4");
 
 const tempDate = new Date();
 const tempYear = tempDate.getFullYear();
@@ -54,7 +54,7 @@ function getRemaindingTime(){
   const today = new Date().getTime();
   // time in milliseconds
   const t =    futureTime - today;
-  // console.log(t)
+    // console.log(t)
 
   // 1s = 1000ms
   // 1m = 60s
@@ -72,8 +72,9 @@ function getRemaindingTime(){
   const hours = Math.floor((t % oneDay)/ oneHour)
   const minutes = Math.floor((t % oneHour) / oneMinute)
   const seconds = Math.floor((t % oneMinute) / 1000)
+  const mSeconds = Math.floor((t % 10))
 
-  const values = [days, hours, minutes, seconds, t]
+  const values = [days, hours, minutes, seconds, mSeconds]
 
   function format(item){
     if(item < 10){
@@ -82,17 +83,22 @@ function getRemaindingTime(){
       return item
   }
 
-  items.forEach((item, index)=>{
-    item.innerHTML = format(values[index]);
+
+  // items.forEach((item, index)=>{
+  //   item.innerHTML = format(values[index]);
     
-  });
+  // });
+  items.forEach(function (item, index) {
+    item.innerHTML = format(values[index]);
+      // console.log(item.innerHTML)
+    });
 
 if(t < 0 ){
   clearInterval(countdown)
-  deadline.textContent = `<h4 class="expired">sorry, this giveaway has expired!</h4>`
+  deadline.innerHTML = `<h4 class="expired">sorry, this giveaway has expired!</h4>`
 }
   }
   // countdown
-  let countdown = setInterval(getRemaindingTime, 1000);
+  let countdown = setInterval(getRemaindingTime, 100);
 
-  getRemaindingTime()
+  getRemaindingTime();
