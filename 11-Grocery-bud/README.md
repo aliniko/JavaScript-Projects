@@ -4,10 +4,10 @@ CRUD plays a very important role in developing full stack applications. Without 
 
 # Key concepts covered:
 
-**DOMContentLoaded**
-**new Date()**
-**createAttribute()**
-**setAttributeNode()**
-**appendChild()**
-**filter()**
-**map()**
+**DOMContentLoaded
+new Date()
+createAttribute()
+setAttributeNode()
+appendChild()
+filter()
+map()**
