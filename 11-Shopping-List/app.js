@@ -16,7 +16,8 @@ let editID = "";
 form.addEventListener("submit", addItem);
 // clear item 
 clearBtn.addEventListener("click", clearItems)
-
+// display items onload
+// window.addEventListener('DOMContentLoaded', setupItems);
 // ****** FUNCTIONS **********
 
 // add item
@@ -120,5 +121,20 @@ function setBackToDefault(){
   submitBtn.textContent = "submit";
 }
 // ****** LOCAL STORAGE **********
+
+// add to local storage
+function addToLocalStorage(id, value){
+  const grocery = {id, value};
+  let items = getLocalStorage();
+  items.push(grocery);
+  localStorage.setItem("list", JSON.stringify(items));
+}
+
+function getLocalStorage(){
+  return localStorage.getItem("list")
+        ? JSON.parse(localStorage.getItem("list"))
+        : [];
+}
+
 
 // ****** SETUP ITEMS **********
