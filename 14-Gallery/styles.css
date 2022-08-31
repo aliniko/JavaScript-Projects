@@ -166,6 +166,7 @@ p {
   transition: var(--transition);
   box-shadow: var(--light-shadow);
   height: 15rem;
+  opacity: 1 !important;
 }
 .img:hover {
   box-shadow: var(--dark-shadow);
@@ -263,6 +264,6 @@ Modal
 .modal-img:hover {
   opacity: 1;
 }
-.modal-img.selected {
+.modal-img .selected {
   opacity: 1;
 }
