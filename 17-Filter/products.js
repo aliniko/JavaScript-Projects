@@ -10,7 +10,7 @@ const products = [
   {
     id: 'rec4f2RIftFCb7aHh',
     title: 'albany table',
-    company: 'marcos',
+    company: 'lidl',
     image:
       'https://dl.airtable.com/.attachments/f3450755e165557344f7d6433242431e/93533098/product-1.jpeg',
     price: 79.99,
@@ -18,7 +18,7 @@ const products = [
   {
     id: 'rec8kkCmSiMkbkiko',
     title: 'accent chair',
-    company: 'caressa',
+    company: 'müller',
     image:
       'https://dl.airtable.com/.attachments/f292eaec4fea8a791b037c759ae559c9/2d5e34d5/product-4.jpeg',
     price: 25.99,
@@ -26,7 +26,7 @@ const products = [
   {
     id: 'recBohCqQsot4Q4II',
     title: 'wooden table',
-    company: 'caressa',
+    company: 'müller',
     image:
       'https://dl.airtable.com/.attachments/5b3ad76dfd6ca5e31810cb99141c7ede/69829b2f/pexels-dominika-roseclay-1139785.jpg',
     price: 45.99,
@@ -34,7 +34,7 @@ const products = [
   {
     id: 'recDG1JRZnbpRHpoy',
     title: 'dining table',
-    company: 'caressa',
+    company: 'lidl',
     image:
       'https://dl.airtable.com/.attachments/06bbede65bd09196b4a81a8e7b59e683/8af0aeb5/product-8.jpg',
     price: 6.99,
@@ -50,7 +50,7 @@ const products = [
   {
     id: 'recZEougL5bbY4AEx',
     title: 'modern bookshelf',
-    company: 'marcos',
+    company: 'müller',
     image:
       'https://dl.airtable.com/.attachments/a889b1928b134c2ca0b5bbca32ea9abf/65c8a9a6/product-7.jpg',
     price: 8.99,
@@ -66,7 +66,7 @@ const products = [
   {
     id: 'recmg2a1ctaEJNZhu',
     title: 'utopia sofa',
-    company: 'marcos',
+    company: 'lidl',
     image:
       'https://dl.airtable.com/.attachments/6ac7f7b55d505057317534722e5a9f03/9183491e/product-3.jpg',
     price: 39.95,
